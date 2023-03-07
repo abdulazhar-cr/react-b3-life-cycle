@@ -1,95 +1,48 @@
 import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
-import { Component } from "react";
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+import Profile from "./Profile";
+import AvatarProfile from "./AvatarProfile";
+// import { Avatar2 } from "./Profile";
+// import { useEffect, useState } from "react";
 
-// const obj = {
-//   fname: "Azhar",
-//   lName: "Shaikh",
-//   fullName: function () {
-//     return this.fname + " " + this.lName;
-//   },
-// };
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Amazing scientists</h1>
+        <AvatarProfile
+          size={100}
+          person={{ name: "xyz", imageId: "1bX5QH6" }}
+        />
+        <AvatarProfile
+          person={{
+            name: "Katsuko Saruhashi",
+            imageId: "YfeOqp2",
+          }}
+        />
+        <AvatarProfile
+          size={80}
+          person={{
+            name: "Aklilu Lemma",
+            imageId: "OKS67lh",
+          }}
+        />
+        <AvatarProfile
+          person={{
+            name: "Lin Lanying",
+            imageId: "1bX5QH6",
+          }}
+        />
 
-class App extends Component {
-  test = "23456543";
-  // where state varialbles are initialized
-  constructor() {
-    super();
-    console.log(this.props);
-    this.state = {
-      color: "red",
-      fname: "Azhar",
-      lname: "Shaikh",
-    };
-    console.log("Construnctor Method", this.state, this.test);
-  }
-  static getDerivedStateFromProps() {
-    console.log("getDerivedStateFromprops called");
-  }
-  shouldComponentUpdate() {
-    console.log("shouldComponentUpdate called");
-    return true;
-  }
-  getSnapshotBeforeUpdate() {
-    console.log("getSnapshotBeforeUpdate called");
-  }
-
-  componentDidUpdate() {
-    console.log("componentDidUpdate called");
-  }
-
-  componentWillUnmount() {
-    console.log("Unmoutiing ");
-  }
-  componentDidMount() {
-    console.log("componentDidMount called");
-    setTimeout(() => {
-      this.setState({ ...this.state, color: "yellow" });
-    }, 15000);
-  }
-
-  render() {
-    console.log("Render Called");
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            {this.state.color}  
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+        {/* <Profile />
+        <Profile />
+        <Profile />
+        <Profile />
+        <Profile /> */}
+      </header>
+    </div>
+  );
 }
 
 export default App;
